@@ -220,6 +220,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/number_button"
+                android:onClick="onClickNumber"
                 android:text="0"
                 android:textSize="24sp"/>
 
@@ -241,6 +242,7 @@
                 android:background="@drawable/equal_button"
                 android:text="="
                 android:textColor="@color/equl_text_color"
+                android:onClick="equalresult"
                 android:textSize="24sp"/>
 
         </LinearLayout>
