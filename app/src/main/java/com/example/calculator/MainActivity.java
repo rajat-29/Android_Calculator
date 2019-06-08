@@ -113,18 +113,22 @@ public class MainActivity extends AppCompatActivity {
     public void equalresult(View v) {
         String input = getinput();
 
-        if (input.contains("x")) {
-            input = input.replaceAll("x", "*");
+        if(!endsWithOperatore()) {
+
+            if (input.contains("x")) {
+                input = input.replaceAll("x", "*");
+            }
+
+            if (input.contains("\u00F7")) {
+                input = input.replaceAll("\u00F7", "/");
+            }
+
+            Expression expression = new ExpressionBuilder(input).build();
+            double result = expression.evaluate();
+
+            displaytext.setText(String.valueOf(result));
         }
-
-        if(input.contains("\u00F7")){
-            input=input.replaceAll("\u00F7","/");
-        }
-
-        Expression expression = new ExpressionBuilder(input).build();
-        double result = expression.evaluate();
-
-        displaytext.setText(String.valueOf(result));
+        else displaytext.setText("");
 
         System.out.println(result);
     }
